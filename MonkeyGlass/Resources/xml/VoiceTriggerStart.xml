@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trigger keyword="Find the monkey">
+	<!--<constraints network="true" /> // Include if your app trigger needs to connect to the internet-->
+<!--	<input prompt="Start or Stop" />-->
+</trigger>

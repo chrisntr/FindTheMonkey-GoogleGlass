@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="MonkeyGlass.MonkeyGlass">
+	<uses-sdk />
+	<application android:label="MonkeyGlass">
+	<service android:enabled="true" android:exported="true" android:isolatedProcess="false" android:label="iBeacon" android:name="com.radiusnetworks.ibeacon.service.IBeaconService"></service>
+	<service android:enabled="true" android:name="com.radiusnetworks.ibeacon.IBeaconIntentProcessor">
+		<meta-data android:name="background" android:value="true" />
+		<intent-filter android:priority="1">
+			<action android:name="MonkeyGlass.MonkeyGlass.DID_RANGING" />
+			<action android:name="MonkeyGlass.MonkeyGlass.DID_MONITORING" />
+		</intent-filter>
+	</service>
+	</application>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+</manifest>
