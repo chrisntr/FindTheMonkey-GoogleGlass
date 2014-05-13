@@ -74,7 +74,6 @@ namespace MonkeyGlass
 
 		void RangingBeaconsInRegion(object sender, RangeEventArgs e)
 		{
-			Console.WriteLine ("Ranging Beacons in Region");
 			if (e.Beacons.Count > 0)
 			{
 
@@ -107,10 +106,9 @@ namespace MonkeyGlass
 
 		private void UpdateDisplay(string message, Android.Graphics.Color color)
 		{
-			AudioManager audio = (AudioManager) GetSystemService(Context.AudioService);
-			audio.PlaySoundEffect((SoundEffect)Sounds.Success);
-
-			Console.WriteLine ("Update Display..." + message + "  " + color.ToString());
+			//Uncomment if you want to hear a success sound on every screenupdate 
+			//			AudioManager audio = (AudioManager) GetSystemService(Context.AudioService);
+			//			audio.PlaySoundEffect((SoundEffect)Sounds.Success);
 
 			if (color == Android.Graphics.Color.Yellow)
 				remoteViews.SetTextColor (Resource.Id.LivecardContent, Android.Graphics.Color.Black);
@@ -138,5 +136,3 @@ namespace MonkeyGlass
 		}
 	}
 }
-
-
